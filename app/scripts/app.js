@@ -4,8 +4,12 @@
   angular.module('formApp', [
     'ngRoute',
     'formApp.formController',
-    'dndLists'
+    'dndLists',
+    'ngSanitize'
   ]);
+
+
+  
 
 
 })();

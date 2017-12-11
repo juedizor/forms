@@ -1,98 +1,96 @@
-
 <div class="container">
 
   <div class="row">
-      <div class="col-md-6">
-        <div class="panel panel-primary animated fadeInLeft">
-          <div class="panel-heading">
-            <h3 class="panel-title">Form Builder</h3>
-          </div>
-          <div class="panel-body" style="height:400px;overflow:auto;">
+    <div class="col-md-6">
+      <div class="panel panel-primary animated fadeInLeft">
+        <div class="panel-heading">
+          <h3 class="panel-title">Form Builder</h3>
+        </div>
+        <div class="panel-body" style="height:400px;overflow:auto;">
 
-              <div class="simpleDemo row">
-                <div class="col-md-14">
-                    <div ng-repeat="(listName, listA) in formCtrl.models.listA" class="col-md-12">
-                      <ul dnd-list="listA">
-                          <!-- The dnd-draggable directive makes an element draggable and will
+          <div class="simpleDemo row">
+            <div class="col-md-14">
+              <div ng-repeat="(listName, listA) in formCtrl.models.listA" class="col-md-12">
+                <ul dnd-list="listA">
+                  <!-- The dnd-draggable directive makes an element draggable and will
                                transfer the object that was assigned to it. If an element was
                                dragged away, you have to remove it from the original list
                                yourself using the dnd-moved attribute -->
-                          <li ng-repeat="item in listA"
-                              dnd-draggable="item"
-                              dnd-effect-allowed="move"
-                              dnd-moved="formCtrl.operacionPanel1(formCtrl.models)"
-                              dnd-selected="formCtrl.models.selected = item"
-                              ng-class="{'selected': formCtrl.models.selected === item}">
-                              <div class="form-group">
-                                <label for="newField-name">Text</label>
-                                <input type="text" class="form-control" id="newField-name" readonly>
-                              </div>
-                          </li>
-                      </ul>
+
+                  <li ng-repeat="item in listA"
+                  dnd-draggable="item"
+                  dnd-effect-allowed="move"
+                  dnd-moved="formCtrl.operacionPanel1(formCtrl.models)"
+                  dnd-selected="formCtrl.models.selected = item"
+                  ng-class="{'selected': formCtrl.models.selected === item}">
+
+                    <div class="form-group">
+                      <label for="newField-name">Text</label>
+                      <div bind-unsafe-html="item.campo.content"></div>
                     </div>
-
-
-                </div>
+                  </li>
+                </ul>
               </div>
 
 
-
+            </div>
           </div>
-        </div>
 
+
+
+        </div>
       </div>
 
+    </div>
 
-      <div class="col-md-6">
-        <div class="panel panel-primary animated fadeInLeft">
-          <div class="panel-heading">
-            <h3 class="panel-title">Form View</h3>
-          </div>
-          <div class="panel-body" style="height:400px;overflow:auto;">
 
-              <div class="simpleDemo row">
-                <div class="col-md-14">
-                    <div ng-repeat="(listName, listB) in formCtrl.models.listB" class="col-md-12">
-                      <ul dnd-list="listB">
-                          <!-- The dnd-draggable directive makes an element draggable and will
+    <div class="col-md-6">
+      <div class="panel panel-primary animated fadeInLeft">
+        <div class="panel-heading">
+          <h3 class="panel-title">Form View</h3>
+        </div>
+        <div class="panel-body" style="height:400px;overflow:auto;">
+
+          <div class="simpleDemo row">
+            <div class="col-md-14">
+              <div ng-repeat="(listName, listB) in formCtrl.models.listB" class="col-md-12">
+                <ul dnd-list="listB">
+                  <!-- The dnd-draggable directive makes an element draggable and will
                                transfer the object that was assigned to it. If an element was
                                dragged away, you have to remove it from the original list
                                yourself using the dnd-moved attribute -->
-                          <li ng-repeat="item in listB"
-                              dnd-draggable="item"
-                              dnd-effect-allowed="move"
-                              dnd-moved="formCtrl.operacionPanel1(formCtrl.models)"
-                              dnd-selected="formCtrl.models.selected = item"
-                              ng-class="{'selected': formCtrl.models.selected === item}">
-                              <div class="form-group">
-                                <label for="newField-name">Text</label>
-                                <input type="text" class="form-control" id="newField-name" readonly>
-                              </div>
-                          </li>
-                      </ul>
+                  <li ng-repeat="item in listB"
+                  dnd-draggable="item"
+                  dnd-effect-allowed="move" dnd-moved="formCtrl.operacionPanel1(formCtrl.models)" dnd-selected="formCtrl.models.selected = item" ng-class="{'selected': formCtrl.models.selected === item}">
+                    <div class="form-group">
+                      <label for="newField-name">Text</label>
+                      <div bind-unsafe-html="item.campo.content"></div>
                     </div>
-
-
-                </div>
+                  </li>
+                </ul>
               </div>
 
 
-
+            </div>
           </div>
-        </div>
 
+
+
+        </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Generated Model</h3>
-            </div>
-            <div class="panel-body">
-                <pre class="code">{{formCtrl.modelAsJson}}</pre>
-            </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Generated Model</h3>
         </div>
+        <div class="panel-body">
+          <pre class="code">{{formCtrl.modelAsJson}}</pre>
+        </div>
+      </div>
     </div>
 
   </div>
-</div
+  </div
