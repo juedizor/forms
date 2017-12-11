@@ -3,7 +3,8 @@
 
   angular.module('formApp', [
     'ngRoute',
-    'formApp.formController'
+    'formApp.formController',
+    'dndLists'
   ]);
 
 

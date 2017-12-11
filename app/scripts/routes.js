@@ -3,7 +3,7 @@
 
   function config($routeProvider) {
     $routeProvider.when('/form', {
-      templateUrl: 'views/form/dynamicsForm.html',
+      templateUrl: 'views/form/dynamics.html',
       controller: 'formCtrl',
       controllerAs: 'formCtrl'
     }).otherwise({
