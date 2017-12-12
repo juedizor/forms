@@ -17,7 +17,12 @@
                                dragged away, you have to remove it from the original list
                                yourself using the dnd-moved attribute -->
 
-                  <li ng-repeat="item in listA" dnd-draggable="item" dnd-effect-allowed="move" dnd-moved="formCtrl.movedComponentA(formCtrl.models)" dnd-selected="formCtrl.models.selected = item" ng-class="{'selected': formCtrl.models.selected === item}">
+                  <li ng-repeat="item in listA"
+                  dnd-draggable="item"
+                  dnd-effect-allowed="move"
+                  dnd-moved="formCtrl.movedComponentA(formCtrl.models, item, $index, listA)" 
+                  dnd-selected="formCtrl.models.selected = item"
+                  ng-class="{'selected': formCtrl.models.selected === item}">
 
                     <div class="form-group">
                       <label for="newField-name">{{item.campo.type}}</label>
