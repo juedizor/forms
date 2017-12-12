@@ -11,7 +11,8 @@
           <div class="simpleDemo row">
             <div class="col-md-14">
               <div ng-repeat="(listName, listA) in formCtrl.models.listA" class="col-md-12">
-                <ul dnd-list="listA">
+                <ul dnd-list="listA"
+                dnd-drop = "formCtrl.move()">
                   <!-- The dnd-draggable directive makes an element draggable and will
                                transfer the object that was assigned to it. If an element was
                                dragged away, you have to remove it from the original list
@@ -19,13 +20,14 @@
 
                   <li ng-repeat="item in listA"
                   dnd-draggable="item"
+
                   dnd-effect-allowed="move"
-                  dnd-moved="formCtrl.operacionPanel1(formCtrl.models)"
+                  dnd-moved="formCtrl.movedComponentA(formCtrl.models)"
                   dnd-selected="formCtrl.models.selected = item"
                   ng-class="{'selected': formCtrl.models.selected === item}">
 
                     <div class="form-group">
-                      <label for="newField-name">Text</label>
+                      <label for="newField-name">{{item.campo.type}}</label>
                       <div bind-unsafe-html="item.campo.content"></div>
                     </div>
                   </li>
@@ -61,9 +63,12 @@
                                yourself using the dnd-moved attribute -->
                   <li ng-repeat="item in listB"
                   dnd-draggable="item"
-                  dnd-effect-allowed="move" dnd-moved="formCtrl.operacionPanel1(formCtrl.models)" dnd-selected="formCtrl.models.selected = item" ng-class="{'selected': formCtrl.models.selected === item}">
+                  dnd-effect-allowed="move"
+                  dnd-moved="formCtrl.movedComponentB(formCtrl.models, listB, $index)"
+                  dnd-selected="formCtrl.models.selected = item"
+                  ng-class="{'selected': formCtrl.models.selected === item}">
                     <div class="form-group">
-                      <label for="newField-name">Text</label>
+                      <label for="newField-name">{{item.campo.type}}</label>
                       <div bind-unsafe-html="item.campo.content"></div>
                     </div>
                   </li>

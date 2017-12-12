@@ -15,13 +15,27 @@
         "A": [{
             campo: {
               type: 'text',
-              content: '<input type="text" class="form-control" id="newField-name" readonly>'
+              content: '<input type="text" class="form-control" readonly>'
             }
           },
           {
             campo: {
               type: 'lista',
-              content: '<select class="form-control" id="newField-type" ng-model="newField.type" ng-required></select>'
+              content: '<select class="form-control"></select>'
+            }
+
+          },
+          {
+            campo: {
+              type: 'radio',
+              content: '<input type="radio" name="" value="">'
+            }
+
+          },
+          {
+            campo: {
+              type: 'text-area',
+              content: '<textarea name="name" rows="8" cols="55" readonly></textarea>'
             }
 
           }
@@ -35,27 +49,48 @@
     };
 
 
+    self.move = function() {}
 
-    // Generate initial model
-    /**
-    for (var i = 1; i <= 3; ++i) {
-        self.models.listA.A.push({label: "Item A" + i});
+
+    self.movedComponentB = function(model, listB, index) {
+      console.log("entre B")
+      console.log(index);
+      for (var i = 0; i < listB.length; i++) {
+        if (i == index) {
+          self.models.listB.B.splice(index, 1);
+        }
+      }
+      console.log(self.models.listB.B)
+      self.initListA();
+      self.modelAsJson = angular.toJson(model, true);
     }
-    */
 
-    self.operacionPanel1 = function(model) {
-      console.log("operacion con panel build form");
+    self.initListA = function() {
       self.models.listA = {
         "A": [{
             campo: {
               type: 'text',
-              content: '<input type="text" class="form-control" id="newField-name" readonly>'
+              content: '<input type="text" class="form-control" readonly>'
             }
           },
           {
             campo: {
               type: 'lista',
-              content: '<select class="form-control" id="newField-type" ng-model="newField.type" ng-required></select>'
+              content: '<select class="form-control"></select>'
+            }
+
+          },
+          {
+            campo: {
+              type: 'radio',
+              content: '<input type="radio" name="" value="">'
+            }
+
+          },
+          {
+            campo: {
+              type: 'text-area',
+              content: '<textarea name="name" rows="8" cols="55" readonly></textarea>'
             }
 
           }
@@ -63,20 +98,12 @@
 
         ]
       }
-      self.modelAsJson = angular.toJson(model, true);
-      console.log(self.modelAsJson);
-
     }
 
-    // Model to JSON for demo purpose
-    $scope.$watch('models', function(model) {
-      console.log("entre")
+    self.movedComponentA = function(model) {
+      self.initListA();
       self.modelAsJson = angular.toJson(model, true);
-    }, true);
-
-
-
-
+    }
   }
 
   angular.module('formApp.formController').controller('formCtrl', gestionarFormulariosDinamicos);
