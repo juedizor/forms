@@ -28,7 +28,7 @@
           {
             campo: {
               type: 'radio',
-              content: '<input type="radio" name="" value="">'
+              content: '<input type="radio" class="form-control" name="" value="">'
             }
 
           },
@@ -36,6 +36,13 @@
             campo: {
               type: 'text-area',
               content: '<textarea name="name" rows="8" cols="55" readonly></textarea>'
+            }
+
+          },
+          {
+            campo: {
+              type: 'check-box',
+              content: '<input type="checkbox" class="form-control" readonly>'
             }
 
           }
@@ -83,7 +90,7 @@
           {
             campo: {
               type: 'radio',
-              content: '<input type="radio" name="" value="">'
+              content: '<input type="radio" class="form-control" name="" value="">'
             }
 
           },
@@ -91,6 +98,13 @@
             campo: {
               type: 'text-area',
               content: '<textarea name="name" rows="8" cols="55" readonly></textarea>'
+            }
+
+          },
+          {
+            campo: {
+              type: 'check-box',
+              content: '<input type="checkbox" class="form-control" readonly>'
             }
 
           }

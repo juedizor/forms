@@ -26,11 +26,12 @@
       display: inline;
     }
   </style>
-
   <title>form-dynamics</title>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARSnA3kQZVVjxOKt0ukCV2fW-k9rpAe1U" type="text/javascript"></script>
 </head>
 
 <body>
+
   <!-- build:js js/vendor.min.js -->
   <!-- bower:js -->
   <script src="lib/angular/angular.js"></script>
@@ -43,6 +44,8 @@
   <script src="lib/angular-spinner/dist/angular-spinner.min.js"></script>
   <script src="lib/angular-loading-spinner/angular-loading-spinner.js"></script>
   <script src="lib/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js"></script>
+  <script src="lib/angular-touch/angular-touch.js"></script>
+  <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -51,6 +54,7 @@
   <script src="/scripts/app.js"></script>
   <script src="/scripts/routes.js"></script>
   <script src="/scripts/controller/form/formController.js"></script>
+  <script src="/scripts/controller/maps/mapsController.js"></script>
   <script src="/scripts/directives/form/bindUnsafeHtml.js"></script>
   <!-- endinject -->
   <!-- endbuild -->

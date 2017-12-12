@@ -6,25 +6,18 @@
         <div class="panel-heading">
           <h3 class="panel-title">Form Builder</h3>
         </div>
-        <div class="panel-body" style="height:400px;overflow:auto;">
+        <div class="panel-body" style="height:auto;overflow:auto;">
 
           <div class="simpleDemo row">
             <div class="col-md-14">
               <div ng-repeat="(listName, listA) in formCtrl.models.listA" class="col-md-12">
-                <ul dnd-list="listA"
-                dnd-drop = "formCtrl.move()">
+                <ul dnd-list="listA" dnd-drop="formCtrl.move()">
                   <!-- The dnd-draggable directive makes an element draggable and will
                                transfer the object that was assigned to it. If an element was
                                dragged away, you have to remove it from the original list
                                yourself using the dnd-moved attribute -->
 
-                  <li ng-repeat="item in listA"
-                  dnd-draggable="item"
-
-                  dnd-effect-allowed="move"
-                  dnd-moved="formCtrl.movedComponentA(formCtrl.models)"
-                  dnd-selected="formCtrl.models.selected = item"
-                  ng-class="{'selected': formCtrl.models.selected === item}">
+                  <li ng-repeat="item in listA" dnd-draggable="item" dnd-effect-allowed="move" dnd-moved="formCtrl.movedComponentA(formCtrl.models)" dnd-selected="formCtrl.models.selected = item" ng-class="{'selected': formCtrl.models.selected === item}">
 
                     <div class="form-group">
                       <label for="newField-name">{{item.campo.type}}</label>
@@ -51,8 +44,7 @@
         <div class="panel-heading">
           <h3 class="panel-title">Form View</h3>
         </div>
-        <div class="panel-body" style="height:400px;overflow:auto;">
-
+        <div class="panel-body" style="height:auto;overflow:auto;">
           <div class="simpleDemo row">
             <div class="col-md-14">
               <div ng-repeat="(listName, listB) in formCtrl.models.listB" class="col-md-12">
@@ -61,15 +53,16 @@
                                transfer the object that was assigned to it. If an element was
                                dragged away, you have to remove it from the original list
                                yourself using the dnd-moved attribute -->
-                  <li ng-repeat="item in listB"
-                  dnd-draggable="item"
-                  dnd-effect-allowed="move"
-                  dnd-moved="formCtrl.movedComponentB(formCtrl.models, listB, $index)"
-                  dnd-selected="formCtrl.models.selected = item"
-                  ng-class="{'selected': formCtrl.models.selected === item}">
+                  <li ng-repeat="item in listB" dnd-draggable="item" dnd-effect-allowed="move" dnd-moved="formCtrl.movedComponentB(formCtrl.models, listB, $index)" dnd-selected="formCtrl.models.selected = item" ng-class="{'selected': formCtrl.models.selected === item}">
                     <div class="form-group">
                       <label for="newField-name">{{item.campo.type}}</label>
-                      <div bind-unsafe-html="item.campo.content"></div>
+                      <div bind-unsafe-html="item.campo.content" style="padding-bottom: 10px;">
+
+                      </div>
+
+                      <button class="btn btn-warning btn-xs">Edit</button>
+                      <button class="btn btn-danger btn-xs">Remove</button>
+                      </h3>
                     </div>
                   </li>
                 </ul>

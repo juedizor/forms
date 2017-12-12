@@ -6,6 +6,10 @@
       templateUrl: 'views/form/dynamics.html',
       controller: 'formCtrl',
       controllerAs: 'formCtrl'
+    }).when('/maps', {
+      templateUrl: 'views/maps/maps-api-google.html',
+      controller: 'mapCtrl',
+      controllerAs: 'mapCtrl'
     }).otherwise({
       redirectTo: '/'
     });
